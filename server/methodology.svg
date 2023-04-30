@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" modified="2023-04-30T08:30:08.197Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="NYWDhN4in5tIueIrxlhR" version="21.2.3" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1226" dy="658" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-2" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;strokeColor=#4D4D4D;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Receiver measures WiFi signal strength" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="160" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-7" value="When GPS fix is obtained it sends current signal strength and location data to server" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="160" y="141" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--0" value="Transmitter sends location data to server when GPS fix is obtained" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="321" y="141" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--1" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.404;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#4D4D4D;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-7" target="ar5wnaqpyI47qOZ6Yny--5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="130" as="sourcePoint" />
+            <mxPoint x="280" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--3" value="The server works on a 30m x 30m map with a resolution of 0.7m.&lt;br&gt;Using location data of receiver and transmitter it maps them onto the map&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="341" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--4" value="Using&amp;nbsp;Bresenham&#39;s line algorithm we find the cells which fall in the Line of Sight. These cells contribute to path loss" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="450" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--5" value="The server logs the location and signal strength data into a CSV file" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="193.5" y="260" width="193" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--6" value="We run a NNLS regression using multiple such logged data points and generate a spatial map of the region" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=3;shadow=0;strokeColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="550" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--7" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#4D4D4D;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ar5wnaqpyI47qOZ6Yny--5" target="ar5wnaqpyI47qOZ6Yny--3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="219.5" y="103" as="sourcePoint" />
+            <mxPoint x="219.5" y="153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--8" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#4D4D4D;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290.5" y="420" as="sourcePoint" />
+            <mxPoint x="290.5" y="451" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--9" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#4D4D4D;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290.5" y="520" as="sourcePoint" />
+            <mxPoint x="290.5" y="551" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ar5wnaqpyI47qOZ6Yny--11" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=2;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.562;entryY=0.04;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#4D4D4D;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="ar5wnaqpyI47qOZ6Yny--0" target="ar5wnaqpyI47qOZ6Yny--5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="233" as="sourcePoint" />
+            <mxPoint x="281" y="271" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
